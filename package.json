@@ -1,0 +1,27 @@
+{
+  "name": "node-geometry",
+  "version": "0.0.1",
+  "description": "Collection of geometry functions implemented in JavaScript",
+  "keywords": [],
+  "author": "Alandarev <alandarev@gmail.com>",
+  "repository": "https://github.com/alandarev/node-geometry.git",
+  "main": "index",
+  "homepage": "https://github.com/alandarev/node-geometry",
+  "bugs": {
+    "url":  "https://github.com/alandarev/node-geometry/issues",
+    "email":  "alandarev@gmail.com"
+  },
+  "devDependencies":  {
+  },
+  "dependencies":  {
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/alandarev/node-geometry/raw/master/LICENSE"
+    }
+  ],
+  "scripts": {
+    "test": "mocha --ui qunit --reporter list ./test.js"
+  }
+}
