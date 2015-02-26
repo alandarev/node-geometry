@@ -8,13 +8,13 @@
   "main": "index",
   "homepage": "https://github.com/alandarev/node-geometry",
   "bugs": {
-    "url":  "https://github.com/alandarev/node-geometry/issues",
-    "email":  "alandarev@gmail.com"
+    "url": "https://github.com/alandarev/node-geometry/issues",
+    "email": "alandarev@gmail.com"
   },
-  "devDependencies":  {
+  "devDependencies": {
+    "mocha": "^2.1.0"
   },
-  "dependencies":  {
-  },
+  "dependencies": {},
   "licenses": [
     {
       "type": "MIT",
