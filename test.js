@@ -30,3 +30,16 @@ test('GeometryBounds with single figure', function()  {
   var gb = new geometry.GeometryBounds(figure1);
   assert.ok(gb);
 });
+
+test('Point is not contained', function()  {
+  var gb = new geometry.GeometryBounds([figure1]);
+  var point = {'lat': '10.0', 'lng': '10.1'};
+  assert.equal(false, gb.contains(point));
+});
+
+test('Point is contained', function() {
+  var gb = new geometry.GeometryBounds([figure1]);
+  var point = {'lat': '10.0', 'lng': '10.0'};
+  assert.equal(true, gb.contains(point));
+
+});
