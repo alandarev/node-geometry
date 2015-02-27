@@ -39,7 +39,7 @@ test('Point is not contained', function()  {
 
 test('Point is contained', function() {
   var gb = new geometry.GeometryBounds([figure1]);
-  var point = {'lat': '10.0', 'lng': '10.0'};
+  var point = {'lat': '1.0', 'lng': '1.0'};
   assert.equal(true, gb.contains(point));
 
 });

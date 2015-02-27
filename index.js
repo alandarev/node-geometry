@@ -19,7 +19,9 @@ GeometryBounds = function(bounds) {
 
       constructedPoint.push(parseFloat(point[this.xKey]));
       constructedPoint.push(parseFloat(point[this.yKey]));
+      constructedBound.push(constructedPoint);
     }
+    this.bounds.push(constructedBound);
   }
 
 }
@@ -32,7 +34,6 @@ GeometryBounds.prototype.contains = function contains(dot)  {
   var x = parseFloat(dot[this.xKey]);
   var y = parseFloat(dot[this.yKey]);
 
-  console.log(this.bounds);
   for(var index in this.bounds) {
 
     if(testInPolygon(this.bounds[index], x, y)) return true;
@@ -41,12 +42,14 @@ GeometryBounds.prototype.contains = function contains(dot)  {
   return false;
 }
 
-function testInPolygon(bound, x, y) {
+function testInPolygon(b, x, y) {
   var c = false;
-  console.log(bound);
-  for(i = 0, j = bound.length - 1; i < bound.length; j = i++)  {
-    console.log(util.format("i = %d, j = %d", i, j));
+  for(i = 0, j = b.length - 1; i < b.length; j = i++)  {
+    if( ((b[i][1] > y) != (b[j][1] > y)) &&
+        (x < (b[j][0] - b[i][0]) * (y - b[i][1]) / (b[j][1] - b[i][1]) + b[i][0]) )
+      c = !c;
   }
+  return c;
 }
 
 exports.GeometryBounds = GeometryBounds;
