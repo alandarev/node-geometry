@@ -21,6 +21,26 @@ var figure1 = [
 
 ];
 
+var figure2 = [
+  {
+    'lat':  "50.0",
+    'lng':  "50.0"
+  },
+  {
+    'lat':  "50.0",
+    'lng':  '60.0',
+  },
+  {
+    'lat':  '60.0',
+    'lng':  '60.0',
+  },
+  {
+    'lat':  '60.0',
+    'lng':  '50.0',
+  }
+
+];
+
 test('GeometryBounds Construction', function()  {
   var gb = new geometry.GeometryBounds();
   assert.ok(gb, 'geometry bounds object was not created');
@@ -40,6 +60,13 @@ test('Point is not contained', function()  {
 test('Point is contained', function() {
   var gb = new geometry.GeometryBounds([figure1]);
   var point = {'lat': '1.0', 'lng': '1.0'};
+  assert.equal(true, gb.contains(point));
+
+});
+
+test('Point is contained in second figure', function() {
+  var gb = new geometry.GeometryBounds([figure1, figure2]);
+  var point = {'lat': '59.9', 'lng': '50.1'};
   assert.equal(true, gb.contains(point));
 
 });
